@@ -1,0 +1,76 @@
+USE team02;
+
+-- CREATEING THE THE BOOK TABLE WITH THE ISBN AS A PRIMARY KEY
+CREATE TABLE BOOK
+(
+    ISBN           VARCHAR(100) PRIMARY KEY,
+    Title          VARCHAR(100) not null,
+    Genre          VARCHAR(20),
+    Rating         DEC(2, 1),
+    Format         VARCHAR(20)  NOT NULL,
+    NumberOfCopies TINYINT      NOT NULL,
+    Publisher      VARCHAR(20)  NOT NULL,
+    Author         VARCHAR(100) not null
+);
+
+
+-- CREATING THE PATRON TABLE WITH CARD NUMBER AS A PRIMARY KEY
+CREATE TABLE PATRON
+(
+    CardNumber  BIGINT primary key,
+    Name        VARCHAR(100) NOT NULL,
+    Active      Bool         NOT NULL,
+    PhoneNumber CHAR(10)     NOT NULL,
+    Email       VARCHAR(100) NOT NULL,
+    HasOverdue  BOOL         NOT NULL
+);
+
+-- CREATE THE ORDER TABLE (Naming it ORDER_TBL BECAUSE ORDER IS A KEYWORD) WITH ORDERID BEING THE PRIMARY KEY
+CREATE TABLE ORDER_TBL
+(
+    OrderID       BIGINT PRIMARY KEY,
+
+    DateRequested date   NOT NULL,
+    CardNumber    BIGINT NOT NULL,
+    DueDate       date   NOT NULL,
+    PastDue       Bool   NOT NULL,
+    ISBN          varchar(100),
+
+    FOREIGN KEY (CardNumber) REFERENCES PATRON (CardNumber),
+
+    FOREIGN KEY (ISBN) REFERENCES BOOK (ISBN)
+);
+-- CREATING THE NEWBOOKREQUEST TABLE AND NEWBOOKISBN AS A PRIMARY KEY
+CREATE TABLE NEWBOOKREQUEST
+(
+    NewBookISBN   VARCHAR(100) primary key,
+    Title         VARCHAR(100) NOT NULL,
+    Genre         VARCHAR(20),
+    Filled        Bool         NOT NULL,
+    DateRequested date         NOT NULL,
+    CardNumber    BIGINT,
+    FOREIGN KEY (CardNumber) REFERENCES PATRON (CardNumber)
+);
+
+
+-- CREATING THE PATRON_NEWBOOKREQUEST WITH CARD NUMBER AS A PRIMARY KEY
+-- I WANT TO REMOVE THIS TABLE
+CREATE TABLE PATRON_NEWBOOKREQUEST
+(
+    Card_Number BIGINT PRIMARY KEY,
+    NewBookISBN VARCHAR(100),
+    FOREIGN KEY (Card_Number) REFERENCES PATRON (CardNumber)
+);
+
+-- CREATING THE BOOK REVIEW TABLE
+CREATE TABLE BOOK_REVIEW
+(
+    RatingID   int primary key,
+    Rating         DEC(2, 1) null,
+    CustomerID bigint,
+    ISBN       varchar(100),
+
+    FOREIGN KEY (CustomerID) REFERENCES PATRON (CardNumber),
+    FOREIGN KEY (ISBN) REFERENCES BOOK (ISBN)
+);
+

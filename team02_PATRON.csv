@@ -1,0 +1,20 @@
+CardNumber,Name,Active,PhoneNumber,Email,HasOverdue
+1231,"Wells, H. G.",1,7042118919,wells@aol.com,1
+41251,"Heisenberg, Werner",0,7042118991,hwarner@aol.com,1
+123121,"Nisbet, Robert",1,7042118928,nrobert@aol.com,0
+123151,"Pratt, John",1,7042118929,pjohn@aol.com,0
+125123,"McKinney, Wes",1,7042134425,mwes@aol.com,1
+1245213,"Silver, Nate",1,7042134424,snate@aol.com,0
+1515214,"Oram, Andy",1,7042134421,oandy@aol.com,0
+12005123,"Camus, Albert",1,7042134428,calbert@aol.com,1
+12315123,"Kafka, Frank",1,7042118911,kfrank@aol.com,1
+12512312,"Cormen, Thomas",0,7042134426,cthomas@aol.com,0
+12512341,"Conway, Drew",1,7042134423,cdrew@aol.com,1
+123151111,"Tao, Terence",1,7042134422,tterence@aol.com,0
+213125123,"Eraly, Abraham",1,7042118931,frank@aol.com,0
+213125132,"Villani, Cedric",1,7042118924,scedric@aol.com,0
+423423452,"Vonnegut, Kurt",1,7042118923,vkurt@aol.com,0
+3323312123,Sebastian Gutierrez,1,7042118922,sgutierrez@aol.com,0
+12321341245,"Sussman, Gerald",0,7042118925,eabraham@aol.com,0
+34534534534,"Konnikova, Maria",1,7042118921,maria@aol.com,0
+123151000000,"Deb, Siddhartha",1,7042134427,dsiddhartha@aol.com,0
